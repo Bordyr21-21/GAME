@@ -4,11 +4,10 @@ let room = "главный зал";
 let coins = 0;
 let playerHp = 150;
 const MAX_HP = 150;
-let weapon = "кулаки";   // "кулаки", "меч" или "топор"
+let weapon = "кулаки";   // кулаки, меч или топор
 let shieldOn = false;
 let lastCorridor = "коридор 1";
 
-// Разовые наград
 let kingPaid = false;
 let kitchenCupboardTaken = false;
 let bedroomCupboardTaken = false;
