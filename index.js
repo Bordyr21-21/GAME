@@ -10,10 +10,10 @@ let lastCorridor = "коридор 1";
 
 let kingPaid = false;
 let kitchenCupboardTaken = false;
-let bedroomCupboardTaken = false;
+let bedroomCupboardTaken = false; 
 let herbFound = false;
 
-// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ 
+//ФУНКЦИИ 
 function ask(text) {
     const answer = prompt(text);
     return answer === null ? "0" : answer; 
@@ -44,7 +44,7 @@ function showInventory() {
     }
 }
 
-// Инвентарь
+// ИНВЕНТАРЬ
 function useInventory() {
     while (true) {
         const choice = ask(
@@ -283,6 +283,7 @@ while (true) {
             "ТРОН КОРОЛЯ\n" +
             "1 — Поговорить с Королём\n" +
             "2 — Вернуться в главный зал\n" +
+            "3 — Достать мечь\n" +
             "0 — Завершить игру"
         );
 
@@ -299,6 +300,19 @@ while (true) {
                     "Вы с подозрением благодарите короля и забираете монеты. " +
                     "Король молча сидит на троне, а его глаза направлены в пустоту");
             }
+
+        } else if (choice === "3") {
+            if (inventory.includes("меч")) {
+                alert(
+                    "Вы достали меч и убили короля... Ваш разум проясняется..."+
+                     "Вы понимаете что королество разрушено, а король был под контролем невиданной вам силы.." +
+                     "Вы покидаете это место и отпраывляетесь скитаться по миру"
+                    );
+            } else {
+                alert("У вас нет меча... Что вы хотели сделать?")
+            }
+            room = "конец";
+
         } else if (choice === "2") {
             room = "главный зал";
         } else {
